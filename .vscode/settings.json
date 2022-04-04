@@ -1,0 +1,35 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#d5577f",
+    "activityBar.activeBorder": "#77d24c",
+    "activityBar.background": "#d5577f",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#77d24c",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#d5577f",
+    "statusBar.background": "#c73261",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#d5577f",
+    "statusBarItem.remoteBackground": "#c73261",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#c73261",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#c7326199",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#c73261",
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 54322,
+      "driver": "PostgreSQL",
+      "name": "qtrees local",
+      "group": "qtrees",
+      "database": "postgres",
+      "username": "postgres",
+      "password": "postgres"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/npm": "9.0.1",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "cz-conventional-changelog": "3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "name": "@technologiestiftung/qtrees-backend",
+  "description": "Backend / API of Qtrees",
+  "version": "0.1.0",
+  "dependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technologiestiftung/qtrees-backend.git"
+  },
+  "keywords": [
+    "supabase",
+    "qtrees",
+    "technologiestiftung"
+  ],
+  "author": "ff6347 <hash@ff6347.email>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/technologiestiftung/qtrees-backend/issues"
+  },
+  "homepage": "https://github.com/technologiestiftung/qtrees-backend#readme"
+}
