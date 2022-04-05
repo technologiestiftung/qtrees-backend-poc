@@ -1,4 +1,4 @@
--- setup is detived from https://github.com/supabase/supabase/blob/a45a8114c1e38af87de4b1af820c97a883777364/examples/nextjs-slack-clone/readme.md
+-- setup is derived from https://github.com/supabase/supabase/blob/a45a8114c1e38af87de4b1af820c97a883777364/examples/nextjs-slack-clone/readme.md
 -- access scope types
 create type public.app_permission as enum ('tree.update');
 -- for example ALTER TYPE public.app_permission ADD VALUE 'tree.delete' AFTER 'redtree.update';
