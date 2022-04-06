@@ -107,8 +107,8 @@ GRANT EXECUTE ON FUNCTION public.authorizate(app_permission, uuid) TO service_ro
 CREATE OR REPLACE FUNCTION public.handle_new_user() RETURNS trigger LANGUAGE 'plpgsql' COST 100 VOLATILE NOT LEAKPROOF SECURITY DEFINER AS $BODY$
 declare is_admin boolean;
 begin
-insert into public.users (id, username)
-values (new.id, new.email);
+insert into public.profiles (id)
+values (new.id);
 select count(*) = 1
 from auth.users into is_admin;
 insert into public.user_roles (user_id, role)

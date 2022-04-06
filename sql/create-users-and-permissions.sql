@@ -76,13 +76,12 @@ select using (auth.uid() = user_id);
 --
 -- triggers and functions
 -- inserts a row into public.users and assigns roles
-create function public.handle_new_user() returns trigger as $$
+create or replace function public.handle_new_user() returns trigger as $$
 declare is_admin boolean;
 begin
 insert into public.users (id, username)
 values (new.id, new.email);
-select count(*) = 1
-from auth.users into is_admin;
+select count(*) = 1 -- from auth.users into is_admin;
 insert into public.user_roles (user_id, role)
 values (new.id, 'viewer');
 return new;
