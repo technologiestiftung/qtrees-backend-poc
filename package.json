@@ -6,15 +6,21 @@
     "@semantic-release/npm": "9.0.1",
     "@semantic-release/release-notes-generator": "10.0.3",
     "@types/jest": "27.4.1",
-    "@typescript-eslint/eslint-plugin": "5.17.0",
-    "@typescript-eslint/parser": "5.17.0",
+    "@typescript-eslint/eslint-plugin": "5.18.0",
+    "@typescript-eslint/parser": "5.18.0",
     "cz-conventional-changelog": "3.3.0",
+    "dotenv": "16.0.0",
+    "esbuild": "0.14.32",
     "eslint": "8.12.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-jest": "26.1.3",
     "eslint-plugin-prettier": "4.0.0",
+    "glob": "7.2.0",
     "jest": "27.5.1",
+    "nodemon": "2.0.15",
+    "openapi-typescript": "5.2.0",
     "prettier": "2.6.2",
+    "rimraf": "3.0.2",
     "ts-node": "10.7.0",
     "typescript": "4.6.3"
   },
@@ -27,7 +33,13 @@
   "description": "Backend / API of Qtrees",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "jest --runInBand --forceExit",
+    "prebuild": "rimraf dist",
+    "postbuild": "tsc --noEmit --project tsconfig.build.json",
+    "build": "node esbuild.config.js",
+    "dev": "nodemon",
+    "commit": "cz"
   },
   "repository": {
     "type": "git",
@@ -43,5 +55,16 @@
   "bugs": {
     "url": "https://github.com/technologiestiftung/qtrees-backend/issues"
   },
-  "homepage": "https://github.com/technologiestiftung/qtrees-backend#readme"
+  "homepage": "https://github.com/technologiestiftung/qtrees-backend#readme",
+  "dependencies": {
+    "@humanwhocodes/env": "2.2.0",
+    "@supabase/supabase-js": "1.33.3",
+    "fastify": "3.28.0",
+    "fastify-auth": "1.1.0",
+    "fastify-cors": "6.0.3",
+    "fastify-jwt": "4.1.3",
+    "fastify-sensible": "3.1.2",
+    "fluent-json-schema": "3.1.0",
+    "make-promises-safe": "5.1.0"
+  }
 }

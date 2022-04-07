@@ -1,0 +1,20 @@
+{
+  "$ref": "https://json.schemastore.org/tsconfig.json",
+
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "**/*.d.ts",
+    "**/*.test.ts",
+    "src/__test-utils/*.ts",
+    "**/__tests__/**/*.ts",
+    "dev-tools/",
+    "dist",
+    "scripts",
+    "quokka-playground"
+  ]
+}
