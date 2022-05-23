@@ -52,7 +52,7 @@ GRANT ALL ON TABLE public.subscriptions TO service_role;
 CREATE TRIGGER subscriptions_moddatetime
     BEFORE UPDATE ON public.subscriptions
     FOR EACH ROW
-    EXECUTE FUNCTION public.moddatetime ('updated_at');
+    EXECUTE FUNCTION moddatetime ('updated_at');
 
 REVOKE ALL ON TABLE public.profiles FROM authenticated;
 
@@ -79,7 +79,7 @@ ALTER TABLE IF EXISTS public.profiles
 CREATE TRIGGER profiles_moddatetime
     BEFORE UPDATE ON public.profiles
     FOR EACH ROW
-    EXECUTE FUNCTION public.moddatetime ('updated_at');
+    EXECUTE FUNCTION moddatetime ('updated_at');
 
 REVOKE ALL ON TABLE public.user_roles FROM authenticated;
 
