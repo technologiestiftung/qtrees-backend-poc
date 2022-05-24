@@ -12,6 +12,150 @@ export interface paths {
       };
     };
   };
+  "/geography_columns": {
+    get: {
+      parameters: {
+        query: {
+          f_table_catalog?: parameters["rowFilter.geography_columns.f_table_catalog"];
+          f_table_schema?: parameters["rowFilter.geography_columns.f_table_schema"];
+          f_table_name?: parameters["rowFilter.geography_columns.f_table_name"];
+          f_geography_column?: parameters["rowFilter.geography_columns.f_geography_column"];
+          coord_dimension?: parameters["rowFilter.geography_columns.coord_dimension"];
+          srid?: parameters["rowFilter.geography_columns.srid"];
+          type?: parameters["rowFilter.geography_columns.type"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["geography_columns"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+  };
+  "/geometry_columns": {
+    get: {
+      parameters: {
+        query: {
+          f_table_catalog?: parameters["rowFilter.geometry_columns.f_table_catalog"];
+          f_table_schema?: parameters["rowFilter.geometry_columns.f_table_schema"];
+          f_table_name?: parameters["rowFilter.geometry_columns.f_table_name"];
+          f_geometry_column?: parameters["rowFilter.geometry_columns.f_geometry_column"];
+          coord_dimension?: parameters["rowFilter.geometry_columns.coord_dimension"];
+          srid?: parameters["rowFilter.geometry_columns.srid"];
+          type?: parameters["rowFilter.geometry_columns.type"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["geometry_columns"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** geometry_columns */
+          geometry_columns?: definitions["geometry_columns"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          f_table_catalog?: parameters["rowFilter.geometry_columns.f_table_catalog"];
+          f_table_schema?: parameters["rowFilter.geometry_columns.f_table_schema"];
+          f_table_name?: parameters["rowFilter.geometry_columns.f_table_name"];
+          f_geometry_column?: parameters["rowFilter.geometry_columns.f_geometry_column"];
+          coord_dimension?: parameters["rowFilter.geometry_columns.coord_dimension"];
+          srid?: parameters["rowFilter.geometry_columns.srid"];
+          type?: parameters["rowFilter.geometry_columns.type"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          f_table_catalog?: parameters["rowFilter.geometry_columns.f_table_catalog"];
+          f_table_schema?: parameters["rowFilter.geometry_columns.f_table_schema"];
+          f_table_name?: parameters["rowFilter.geometry_columns.f_table_name"];
+          f_geometry_column?: parameters["rowFilter.geometry_columns.f_geometry_column"];
+          coord_dimension?: parameters["rowFilter.geometry_columns.coord_dimension"];
+          srid?: parameters["rowFilter.geometry_columns.srid"];
+          type?: parameters["rowFilter.geometry_columns.type"];
+        };
+        body: {
+          /** geometry_columns */
+          geometry_columns?: definitions["geometry_columns"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/profiles": {
     get: {
       parameters: {
@@ -19,6 +163,7 @@ export interface paths {
           id?: parameters["rowFilter.profiles.id"];
           updated_at?: parameters["rowFilter.profiles.updated_at"];
           username?: parameters["rowFilter.profiles.username"];
+          com_channel?: parameters["rowFilter.profiles.com_channel"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -72,6 +217,7 @@ export interface paths {
           id?: parameters["rowFilter.profiles.id"];
           updated_at?: parameters["rowFilter.profiles.updated_at"];
           username?: parameters["rowFilter.profiles.username"];
+          com_channel?: parameters["rowFilter.profiles.com_channel"];
         };
         header: {
           /** Preference */
@@ -89,6 +235,7 @@ export interface paths {
           id?: parameters["rowFilter.profiles.id"];
           updated_at?: parameters["rowFilter.profiles.updated_at"];
           username?: parameters["rowFilter.profiles.username"];
+          com_channel?: parameters["rowFilter.profiles.com_channel"];
         };
         body: {
           /** profiles */
@@ -198,6 +345,210 @@ export interface paths {
       };
     };
   };
+  "/spatial_ref_sys": {
+    get: {
+      parameters: {
+        query: {
+          srid?: parameters["rowFilter.spatial_ref_sys.srid"];
+          auth_name?: parameters["rowFilter.spatial_ref_sys.auth_name"];
+          auth_srid?: parameters["rowFilter.spatial_ref_sys.auth_srid"];
+          srtext?: parameters["rowFilter.spatial_ref_sys.srtext"];
+          proj4text?: parameters["rowFilter.spatial_ref_sys.proj4text"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["spatial_ref_sys"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** spatial_ref_sys */
+          spatial_ref_sys?: definitions["spatial_ref_sys"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          srid?: parameters["rowFilter.spatial_ref_sys.srid"];
+          auth_name?: parameters["rowFilter.spatial_ref_sys.auth_name"];
+          auth_srid?: parameters["rowFilter.spatial_ref_sys.auth_srid"];
+          srtext?: parameters["rowFilter.spatial_ref_sys.srtext"];
+          proj4text?: parameters["rowFilter.spatial_ref_sys.proj4text"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          srid?: parameters["rowFilter.spatial_ref_sys.srid"];
+          auth_name?: parameters["rowFilter.spatial_ref_sys.auth_name"];
+          auth_srid?: parameters["rowFilter.spatial_ref_sys.auth_srid"];
+          srtext?: parameters["rowFilter.spatial_ref_sys.srtext"];
+          proj4text?: parameters["rowFilter.spatial_ref_sys.proj4text"];
+        };
+        body: {
+          /** spatial_ref_sys */
+          spatial_ref_sys?: definitions["spatial_ref_sys"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/subscriptions": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.subscriptions.id"];
+          description?: parameters["rowFilter.subscriptions.description"];
+          created_at?: parameters["rowFilter.subscriptions.created_at"];
+          updated_at?: parameters["rowFilter.subscriptions.updated_at"];
+          geom?: parameters["rowFilter.subscriptions.geom"];
+          cron?: parameters["rowFilter.subscriptions.cron"];
+          profile_id?: parameters["rowFilter.subscriptions.profile_id"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["subscriptions"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** subscriptions */
+          subscriptions?: definitions["subscriptions"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.subscriptions.id"];
+          description?: parameters["rowFilter.subscriptions.description"];
+          created_at?: parameters["rowFilter.subscriptions.created_at"];
+          updated_at?: parameters["rowFilter.subscriptions.updated_at"];
+          geom?: parameters["rowFilter.subscriptions.geom"];
+          cron?: parameters["rowFilter.subscriptions.cron"];
+          profile_id?: parameters["rowFilter.subscriptions.profile_id"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.subscriptions.id"];
+          description?: parameters["rowFilter.subscriptions.description"];
+          created_at?: parameters["rowFilter.subscriptions.created_at"];
+          updated_at?: parameters["rowFilter.subscriptions.updated_at"];
+          geom?: parameters["rowFilter.subscriptions.geom"];
+          cron?: parameters["rowFilter.subscriptions.cron"];
+          profile_id?: parameters["rowFilter.subscriptions.profile_id"];
+        };
+        body: {
+          /** subscriptions */
+          subscriptions?: definitions["subscriptions"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/user_roles": {
     get: {
       parameters: {
@@ -291,6 +642,1376 @@ export interface paths {
       };
     };
   };
+  "/rpc/st_delaunaytriangles": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            g1: string;
+            /** Format: integer */
+            flags?: number;
+            /** Format: double precision */
+            tolerance?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_frechetdistance": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            ""?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_distance": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geography */
+            geog2: string;
+            /** Format: boolean */
+            use_spheroid?: boolean;
+            /** Format: geography */
+            geog1: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_minimumboundingcircle": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            inputgeom: string;
+            /** Format: integer */
+            segs_per_quarter?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_mpolyfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3dshortestline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_removerepeatedpoints": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: double precision */
+            tolerance?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/populate_geometry_columns": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            use_typmod?: boolean;
+            /** Format: oid */
+            tbl_oid: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomfromgeojson": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_isvaliddetail": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: integer */
+            flags?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_mpointfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_linecrossingdirection": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            line1: string;
+            /** Format: geometry */
+            line2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_multipointfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/equals": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_sharedpaths": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_type_name": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            use_new_name?: boolean;
+            /** Format: integer */
+            coord_dimension: number;
+            /** Format: character varying */
+            geomname: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_longestline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_lt": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_mlinefromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_distancespheroid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: spheroid */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_concavehull": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            param_inputgeom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_assvg": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            rel?: number;
+            /** Format: geometry */
+            geom: string;
+            /** Format: integer */
+            maxdecimaldigits?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_above": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3dmaxdistance": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_boundingdiagonal": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            fits?: boolean;
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_addpoint": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: integer */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_locatebetweenelevations": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            toelevation: number;
+            /** Format: double precision */
+            fromelevation: number;
+            /** Format: geometry */
+            geometry: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_linetocurve": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geometry: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_azimuth": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_cmp": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/gettransactionid": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_same_3d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geographyfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_multipolygonfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/unlockrows": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/dropgeometrytable": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: character varying */
+            table_name: string;
+            /** Format: character varying */
+            catalog_name: string;
+            /** Format: character varying */
+            schema_name: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomcollfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_multilinefromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_maximuminscribedcircle": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3ddwithin": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_postgis_selectivity": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: text */
+            att_name: string;
+            /** Format: text */
+            mode?: string;
+            /** Format: regclass */
+            tbl: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_quantizecoordinates": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            prec_y?: number;
+            /** Format: geometry */
+            g: string;
+            /** Format: integer */
+            prec_x: number;
+            /** Format: integer */
+            prec_z?: number;
+            /** Format: integer */
+            prec_m?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_locatebetween": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            leftrightoffset?: number;
+            /** Format: double precision */
+            tomeasure: number;
+            /** Format: geometry */
+            geometry: string;
+            /** Format: double precision */
+            frommeasure: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_overlaps": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_overabove": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_aslatlontext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            tmpl?: string;
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_wagyu_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_mpointfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_le": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_covers": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_within": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_postgis_index_extent": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            col: string;
+            /** Format: regclass */
+            tbl: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geohash": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: integer */
+            maxchars?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_intersection": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            gridsize?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_hexagon": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            cell_j: number;
+            /** Format: double precision */
+            size: number;
+            /** Format: integer */
+            cell_i: number;
+            /** Format: geometry */
+            origin?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3dmakebox": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_difference": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            gridsize?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_linelocatepoint": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_snaptogrid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_eq": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_wrapx": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: double precision */
+            move: number;
+            /** Format: double precision */
+            wrap: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geometryfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
   "/rpc/authorizate": {
     post: {
       parameters: {
@@ -313,9 +2034,4028 @@ export interface paths {
       };
     };
   };
+  "/rpc/_postgis_pgsql_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_contains": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_postgis_stats": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            att_name: string;
+            /** Format: regclass */
+            tbl: string;
+            /** Format: text */
+            ""?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_symmetricdifference": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_multipolyfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_area": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            use_spheroid?: boolean;
+            /** Format: geography */
+            geog: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_postgis_deprecate": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            oldname: string;
+            /** Format: text */
+            newname: string;
+            /** Format: text */
+            version: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_3dintersects": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/enablelongtransactions": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_forcesfs": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            version: string;
+            /** Format: geometry */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_voronoipolygons": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            g1: string;
+            /** Format: double precision */
+            tolerance?: number;
+            /** Format: geometry */
+            extend_to?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_disjoint": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_asx3d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: integer */
+            options?: number;
+            /** Format: integer */
+            maxdecimaldigits?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_geos_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_lib_revision": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_maxdistance": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_setsrid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: integer */
+            srid: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_full_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_wkttosql": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_postgis_scripts_pgsql_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_voronoilines": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            g1: string;
+            /** Format: double precision */
+            tolerance?: number;
+            /** Format: geometry */
+            extend_to?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_orderingequals": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_curvetoline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: integer */
+            flags?: number;
+            /** Format: double precision */
+            tol?: number;
+            /** Format: integer */
+            toltype?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_astwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            with_sizes?: boolean;
+            /** Format: geometry[] */
+            geom: string;
+            /** Format: bigint[] */
+            ids: string;
+            /** Format: integer */
+            prec?: number;
+            /** Format: integer */
+            prec_z?: number;
+            /** Format: boolean */
+            with_boxes?: boolean;
+            /** Format: integer */
+            prec_m?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_dwithin": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            tolerance: number;
+            /** Format: geography */
+            geog2: string;
+            /** Format: boolean */
+            use_spheroid?: boolean;
+            /** Format: geography */
+            geog1: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3ddistance": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_overleft": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_buffer": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            quadsegs: number;
+            /** Format: geometry */
+            geom: string;
+            /** Format: double precision */
+            radius: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geography": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_split": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_ge": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomfromewkt": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_within": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_contains_3d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_constraint_type": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            geomschema: string;
+            /** Format: text */
+            geomcolumn: string;
+            /** Format: text */
+            geomtable: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/longtransactionsenabled": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_asmvtgeom": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            clip_geom?: boolean;
+            /** Format: integer */
+            buffer?: number;
+            /** Format: geometry */
+            geom: string;
+            /** Format: integer */
+            extent?: number;
+            /** Format: box2d */
+            bounds: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_angle": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            pt2: string;
+            /** Format: geometry */
+            pt4?: string;
+            /** Format: geometry */
+            pt1: string;
+            /** Format: geometry */
+            pt3: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_perimeter": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            use_spheroid?: boolean;
+            /** Format: geography */
+            geog: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_contains": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_maxdistance": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_overlaps_3d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_multipointfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_unaryunion": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            gridsize?: number;
+            /** Format: geometry */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_touches": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_linefromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_liblwgeom_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_minimumboundingradius": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_scripts_released": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_force3d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            zvalue?: number;
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_concavehull": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            param_pctconvex: number;
+            /** Format: geometry */
+            param_geom: string;
+            /** Format: boolean */
+            param_allow_holes?: boolean;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_closestpoint": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_asgml": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: text */
+            id?: string;
+            /** Format: integer */
+            options?: number;
+            /** Format: text */
+            nprefix?: string;
+            /** Format: integer */
+            maxdecimaldigits?: number;
+            /** Format: integer */
+            version: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_union": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            gridsize: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_force4d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            zvalue?: number;
+            /** Format: geometry */
+            geom: string;
+            /** Format: double precision */
+            mvalue?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_asgeojson": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            pretty_bool?: boolean;
+            /** Format: integer */
+            maxdecimaldigits?: number;
+            /** Format: record */
+            r: string;
+            /** Format: text */
+            geom_column?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_gt": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_subdivide": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: double precision */
+            gridsize?: number;
+            /** Format: integer */
+            maxvertices?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_voronoi": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            g1: string;
+            /** Format: double precision */
+            tolerance?: number;
+            /** Format: boolean */
+            return_polygons?: boolean;
+            /** Format: geometry */
+            clip?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_interpolatepoint": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            line: string;
+            /** Format: geometry */
+            point: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_gmltosql": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_segmentize": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geography */
+            geog: string;
+            /** Format: double precision */
+            max_segment_length: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_crosses": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_square": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            cell_j: number;
+            /** Format: double precision */
+            size: number;
+            /** Format: integer */
+            cell_i: number;
+            /** Format: geometry */
+            origin?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_orderingequals": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_overbelow": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_equals": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomfromtwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_constraint_srid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            geomschema: string;
+            /** Format: text */
+            geomcolumn: string;
+            /** Format: text */
+            geomtable: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geometricmedian": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            g: string;
+            /** Format: integer */
+            max_iter?: number;
+            /** Format: double precision */
+            tolerance?: number;
+            /** Format: boolean */
+            fail_if_not_converged?: boolean;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_intersects": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_linecrossingdirection": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            line1: string;
+            /** Format: geometry */
+            line2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_overright": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_sortablehash": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3dclosestpoint": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_pointfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_3ddfullywithin": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_overlaps": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_lib_build_date": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_asewkt": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_symdifference": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            gridsize?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_polyfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_hexagongrid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            size: number;
+            /** Format: geometry */
+            bounds: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/addauth": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geogfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_transform": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            from_proj: string;
+            /** Format: integer */
+            to_srid: number;
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_collect": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_astext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_askml": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: text */
+            nprefix?: string;
+            /** Format: integer */
+            maxdecimaldigits?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_reduceprecision": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: double precision */
+            gridsize: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_coorddim": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geometry: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_distance_box": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_right": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_pointfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_shortestline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_contained_3d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_linestringfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geomfromewkt": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_crosses": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_constraint_dims": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            geomschema: string;
+            /** Format: text */
+            geomcolumn: string;
+            /** Format: text */
+            geomtable: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_hausdorffdistance": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_makeline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geomfromewkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_centroid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            use_spheroid?: boolean;
+            /** Format: geography */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_locatealong": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            measure: number;
+            /** Format: double precision */
+            leftrightoffset?: number;
+            /** Format: geometry */
+            geometry: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_polygonfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_svn_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_dfullywithin": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomfromewkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_proj_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_mpolyfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_same": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_linefromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/dropgeometrycolumn": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: character varying */
+            table_name: string;
+            /** Format: character varying */
+            catalog_name: string;
+            /** Format: character varying */
+            column_name: string;
+            /** Format: character varying */
+            schema_name: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_length": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            use_spheroid?: boolean;
+            /** Format: geography */
+            geog: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_gist_same_2d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: internal */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_coveredby": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_generatepoints": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            seed: number;
+            /** Format: integer */
+            npoints: number;
+            /** Format: geometry */
+            area: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_overlaps": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_wkbtosql": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            wkb: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_lineinterpolatepoints": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: boolean */
+            repeat?: boolean;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomfromkml": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_scripts_installed": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_hasarc": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geometry: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_snap": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_srid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_touches": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_makebox2d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_lib_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_force3dz": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            zvalue?: number;
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_distancesphere": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_transform_geometry": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: integer */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_left": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_linefromencodedpolyline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            nprecision?: number;
+            /** Format: text */
+            txtin: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_asencodedpolyline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            nprecision?: number;
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_contains": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_equals": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_scale": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            origin: string;
+            /** Format: geometry */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3dintersects": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geogfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_offsetcurve": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            distance: number;
+            /** Format: geometry */
+            line: string;
+            /** Format: text */
+            params?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/disablelongtransactions": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_swapordinates": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: cstring */
+            ords: string;
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_polyfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_multilinestringfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_covers": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_containsproperly": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomfromgml": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/addgeometrycolumn": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: character varying */
+            table_name: string;
+            /** Format: character varying */
+            catalog_name: string;
+            /** Format: boolean */
+            use_typmod?: boolean;
+            /** Format: integer */
+            new_srid_in: number;
+            /** Format: character varying */
+            new_type: string;
+            /** Format: character varying */
+            column_name: string;
+            /** Format: integer */
+            new_dim: number;
+            /** Format: character varying */
+            schema_name: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_scripts_build_date": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_squaregrid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            size: number;
+            /** Format: geometry */
+            bounds: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_libprotobuf_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_dfullywithin": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_geomcollfromtext": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_mlinefromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_force3dm": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: double precision */
+            mvalue?: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_3ddwithin": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_node": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            g: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_expand": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            dm?: number;
+            /** Format: double precision */
+            dy: number;
+            /** Format: geometry */
+            geom: string;
+            /** Format: double precision */
+            dz?: number;
+            /** Format: double precision */
+            dx: number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3dlongestline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_extensions_upgrade": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_containsproperly": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_normalize": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/updategeometrysrid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: character varying */
+            table_name: string;
+            /** Format: integer */
+            new_srid_in: number;
+            /** Format: character varying */
+            column_name: string;
+            /** Format: character varying */
+            catalogn_name: string;
+            /** Format: character varying */
+            schema_name: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_libjson_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_clipbybox2d": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom: string;
+            /** Format: box2d */
+            box: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_below": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_within": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_relate": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: text */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_longestline": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_intersects": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_coveredby": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_tileenvelope": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: integer */
+            x: number;
+            /** Format: integer */
+            zoom: number;
+            /** Format: double precision */
+            margin?: number;
+            /** Format: integer */
+            y: number;
+            /** Format: geometry */
+            bounds?: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/_st_dwithin": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            tolerance: number;
+            /** Format: geography */
+            geog2: string;
+            /** Format: boolean */
+            use_spheroid?: boolean;
+            /** Format: geography */
+            geog1: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_3ddfullywithin": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+            /** Format: double precision */
+            "": number;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_project": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: double precision */
+            distance: number;
+            /** Format: double precision */
+            azimuth: number;
+            /** Format: geography */
+            geog: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/st_polygonfromwkb": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: bytea */
+            "": string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/geometry_distance_centroid": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: geometry */
+            geom1: string;
+            /** Format: geometry */
+            geom2: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/postgis_libxml_version": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
 }
 
 export interface definitions {
+  geography_columns: {
+    /** Format: name */
+    f_table_catalog?: string;
+    /** Format: name */
+    f_table_schema?: string;
+    /** Format: name */
+    f_table_name?: string;
+    /** Format: name */
+    f_geography_column?: string;
+    /** Format: integer */
+    coord_dimension?: number;
+    /** Format: integer */
+    srid?: number;
+    /** Format: text */
+    type?: string;
+  };
+  geometry_columns: {
+    /** Format: character varying */
+    f_table_catalog?: string;
+    /** Format: name */
+    f_table_schema?: string;
+    /** Format: name */
+    f_table_name?: string;
+    /** Format: name */
+    f_geometry_column?: string;
+    /** Format: integer */
+    coord_dimension?: number;
+    /** Format: integer */
+    srid?: number;
+    /** Format: character varying */
+    type?: string;
+  };
   profiles: {
     /**
      * Format: uuid
@@ -323,10 +6063,19 @@ export interface definitions {
      * This is a Primary Key.<pk/>
      */
     id: string;
-    /** Format: timestamp with time zone */
+    /**
+     * Format: timestamp with time zone
+     * @default CURRENT_TIMESTAMP
+     */
     updated_at?: string;
     /** Format: text */
     username?: string;
+    /**
+     * Format: public.com_channel
+     * @default EMAIL
+     * @enum {string}
+     */
+    com_channel: "SMS" | "EMAIL";
   };
   /** @description Application permissions for each role */
   role_permissions: {
@@ -346,6 +6095,59 @@ export interface definitions {
      * @enum {string}
      */
     permission: "tree.update";
+  };
+  spatial_ref_sys: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    srid: number;
+    /** Format: character varying */
+    auth_name?: string;
+    /** Format: integer */
+    auth_srid?: number;
+    /** Format: character varying */
+    srtext?: string;
+    /** Format: character varying */
+    proj4text?: string;
+  };
+  subscriptions: {
+    /** Format: integer */
+    id: number;
+    /** Format: text */
+    description?: string;
+    /**
+     * Format: timestamp with time zone
+     * @default CURRENT_TIMESTAMP
+     */
+    created_at: string;
+    /**
+     * Format: timestamp with time zone
+     * @default CURRENT_TIMESTAMP
+     */
+    updated_at: string;
+    /** Format: public.geometry */
+    geom: string;
+    /**
+     * Format: public.cron
+     * @default 0 8 * * 1
+     * @enum {string}
+     */
+    cron:
+      | "0 8 * * 0"
+      | "0 8 * * 1"
+      | "0 8 * * 2"
+      | "0 8 * * 3"
+      | "0 8 * * 4"
+      | "0 8 * * 5"
+      | "0 8 * * 6";
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>
+     */
+    profile_id: string;
   };
   /** @description Application roles for each user */
   user_roles: {
@@ -402,6 +6204,38 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
+  /** @description geography_columns */
+  "body.geography_columns": definitions["geography_columns"];
+  /** Format: name */
+  "rowFilter.geography_columns.f_table_catalog": string;
+  /** Format: name */
+  "rowFilter.geography_columns.f_table_schema": string;
+  /** Format: name */
+  "rowFilter.geography_columns.f_table_name": string;
+  /** Format: name */
+  "rowFilter.geography_columns.f_geography_column": string;
+  /** Format: integer */
+  "rowFilter.geography_columns.coord_dimension": string;
+  /** Format: integer */
+  "rowFilter.geography_columns.srid": string;
+  /** Format: text */
+  "rowFilter.geography_columns.type": string;
+  /** @description geometry_columns */
+  "body.geometry_columns": definitions["geometry_columns"];
+  /** Format: character varying */
+  "rowFilter.geometry_columns.f_table_catalog": string;
+  /** Format: name */
+  "rowFilter.geometry_columns.f_table_schema": string;
+  /** Format: name */
+  "rowFilter.geometry_columns.f_table_name": string;
+  /** Format: name */
+  "rowFilter.geometry_columns.f_geometry_column": string;
+  /** Format: integer */
+  "rowFilter.geometry_columns.coord_dimension": string;
+  /** Format: integer */
+  "rowFilter.geometry_columns.srid": string;
+  /** Format: character varying */
+  "rowFilter.geometry_columns.type": string;
   /** @description profiles */
   "body.profiles": definitions["profiles"];
   /** Format: uuid */
@@ -410,6 +6244,8 @@ export interface parameters {
   "rowFilter.profiles.updated_at": string;
   /** Format: text */
   "rowFilter.profiles.username": string;
+  /** Format: public.com_channel */
+  "rowFilter.profiles.com_channel": string;
   /** @description role_permissions */
   "body.role_permissions": definitions["role_permissions"];
   /** Format: bigint */
@@ -418,6 +6254,34 @@ export interface parameters {
   "rowFilter.role_permissions.role": string;
   /** Format: public.app_permission */
   "rowFilter.role_permissions.permission": string;
+  /** @description spatial_ref_sys */
+  "body.spatial_ref_sys": definitions["spatial_ref_sys"];
+  /** Format: integer */
+  "rowFilter.spatial_ref_sys.srid": string;
+  /** Format: character varying */
+  "rowFilter.spatial_ref_sys.auth_name": string;
+  /** Format: integer */
+  "rowFilter.spatial_ref_sys.auth_srid": string;
+  /** Format: character varying */
+  "rowFilter.spatial_ref_sys.srtext": string;
+  /** Format: character varying */
+  "rowFilter.spatial_ref_sys.proj4text": string;
+  /** @description subscriptions */
+  "body.subscriptions": definitions["subscriptions"];
+  /** Format: integer */
+  "rowFilter.subscriptions.id": string;
+  /** Format: text */
+  "rowFilter.subscriptions.description": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.subscriptions.created_at": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.subscriptions.updated_at": string;
+  /** Format: public.geometry */
+  "rowFilter.subscriptions.geom": string;
+  /** Format: public.cron */
+  "rowFilter.subscriptions.cron": string;
+  /** Format: uuid */
+  "rowFilter.subscriptions.profile_id": string;
   /** @description user_roles */
   "body.user_roles": definitions["user_roles"];
   /** Format: bigint */
