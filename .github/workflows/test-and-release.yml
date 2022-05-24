@@ -100,8 +100,6 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
   build-and-push-ghcr:
-    env:
-      REGISTRY: ${{ env.REGISTRY }}
     needs:
       - build
     runs-on: ubuntu-latest
