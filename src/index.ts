@@ -1,5 +1,9 @@
 import { port, host } from "./env";
 import { buildServer } from "./server";
+import { runQueues } from "./queues";
+
+runQueues();
+
 const server = buildServer();
 async function main(): Promise<void> {
   server.listen({ port, host }, (err) => {
@@ -8,7 +12,7 @@ async function main(): Promise<void> {
       process.exit(1);
     } else {
       //
-      console.log(`Server listening on ${host}:${port}`);
+      server.log.info(`Server listening on ${host}:${port}`);
     }
   });
 }

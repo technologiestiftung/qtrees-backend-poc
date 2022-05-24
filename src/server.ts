@@ -30,7 +30,7 @@ type UserRole = definitions["user_roles"];
 
 const supabase = createClient(supabaseURL, serviceRoleKey);
 export function buildServer() {
-  const server = fastify({});
+  const server = fastify({ logger: true });
   server
     .register(fastifySensible)
     .register(fastifyAuth)
@@ -41,7 +41,7 @@ export function buildServer() {
       "verifyJWT",
       async (request: FastifyRequest, _reply: FastifyReply) => {
         await request.jwtVerify();
-      }
+      },
     )
     .decorate("supabase", supabase)
     .after(() => {
@@ -77,12 +77,12 @@ export function buildServer() {
           }
           if (data === null || data.length === 0) {
             throw server.httpErrors.forbidden(
-              "You dont have the right permissions"
+              "You dont have the right permissions",
             );
           }
           if (!["admin", "editor"].includes(data[0].role)) {
             throw server.httpErrors.forbidden(
-              "You dont have the right permissions"
+              "You dont have the right permissions",
             );
           }
           console.log("write to db");
