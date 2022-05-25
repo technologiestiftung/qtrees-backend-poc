@@ -1,8 +1,5 @@
 import { port, host } from "./env";
 import { buildServer } from "./server";
-import { runQueues } from "./queues";
-
-runQueues();
 
 const server = buildServer();
 async function main(): Promise<void> {
