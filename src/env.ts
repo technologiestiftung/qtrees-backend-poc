@@ -6,6 +6,7 @@ const port = parseInt(env.require("PORT"), 10);
 const supabaseURL = env.require("SUPABASE_URL");
 const serviceRoleKey = env.require("SUPABASE_SERVICE_ROLE_KEY");
 const anonKey = env.require("SUPABASE_ANON_KEY");
+
 if (anonKey === undefined) {
   throw new Error("ANON_KEY is not defined");
 }
